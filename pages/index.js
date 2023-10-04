@@ -2,7 +2,7 @@ import Indexbottom from '@/components/Indexbottom';
 import React, { useState, useEffect } from 'react';
 
 
-const Hero8 = () => {
+const Index = () => {
   
   const images = [
     'unique gas.png',
@@ -274,4 +274,4 @@ const Hero8 = () => {
   )
 }
 
-export default Hero8
+export default Index

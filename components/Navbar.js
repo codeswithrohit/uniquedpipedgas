@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Popover } from "@headlessui/react"
 import { HomeIcon, CogIcon, CreditCardIcon, InformationCircleIcon, MailIcon, ShoppingCartIcon,XIcon,MenuIcon } from "@heroicons/react/outline";
 import { LoginIcon, PencilAltIcon } from "@heroicons/react/solid"
+import Link from 'next/link';
 
 
 const StoreNavigation8 = () => {
@@ -39,15 +40,15 @@ const StoreNavigation8 = () => {
             </div>
             {/* :::Sign In / Sign Up / Cart */}
             <div className="py-5 px-4 flex flex-col space-y-2 border-t-2">
-              <a href="#link" className="py-1 px-4 rounded-md text-sm text-gray-700 font-semibold tracking-wide hover:bg-yellow-600 hover:text-white">
+              <Link href="#link" className="py-1 px-4 rounded-md text-sm text-gray-700 font-semibold tracking-wide hover:bg-yellow-600 hover:text-white">
                 Sign In
-              </a>
-              <a href="#link" className="py-1 px-4 rounded-md text-sm text-gray-700 font-semibold tracking-wide hover:bg-yellow-600 hover:text-white">
+              </Link>
+              <Link href="#link" className="py-1 px-4 rounded-md text-sm text-gray-700 font-semibold tracking-wide hover:bg-yellow-600 hover:text-white">
                 Create a account
-              </a>
-              <a href="#link" className="py-1 px-4 rounded-md text-sm text-gray-700 font-semibold tracking-wide hover:bg-yellow-600 hover:text-white">
+              </Link>
+              <Link href="#link" className="py-1 px-4 rounded-md text-sm text-gray-700 font-semibold tracking-wide hover:bg-yellow-600 hover:text-white">
                 My Cart
-              </a>
+              </Link>
             </div>
             {/* :::Language & Currency */}
             <div className="py-5 px-4 flex flex-col space-y-4 border-t-2">
@@ -91,40 +92,40 @@ const StoreNavigation8 = () => {
                 <MenuIcon className="w-8 h-8" />
               </button>
               {/* ::::logo  */}
-              <a href="#link" className="flex-shrink-0 w-48 h-20   text-yellow-600">
+              <Link href="/" className="flex-shrink-0 w-48 h-20   text-yellow-600">
               <img
       src='unique.png'
       alt="logo"
       className=" w-48 h-20  " />
-              </a>
+              </Link>
              
             </div>
 
 
             <div className="flex items-center md:space-x-4">
   {/* Home */}
-  <a href="/" className="border-5-2 border-gray-200 py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
+  <Link href="/" className="border-5-2 border-gray-200 py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
     <HomeIcon className="mr-2 w-4 h-4" />
     Home
-  </a>
+  </Link>
   
   {/* Services */}
-  <a href="/services" className="py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
+  <Link href="/services" className="py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
     <CogIcon className="mr-2 w-4 h-4" />
     Services
-  </a>
+  </Link>
   
   {/* Payment */}
-  <a href="payment" className="py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
+  <Link href="payment" className="py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
     <CreditCardIcon className="mr-2 w-4 h-4" />
     Payment
-  </a>
+  </Link>
   
   {/* About Us */}
-  <a href="/aboutus" className="py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
+  <Link href="/aboutus" className="py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
     <InformationCircleIcon className="mr-2 w-4 h-4" />
     About Us
-  </a>
+  </Link>
   
   {/* Contact Us */}
   <a href="/contactus" className="py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
