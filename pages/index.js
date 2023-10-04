@@ -1,5 +1,6 @@
 import Indexbottom from '@/components/Indexbottom';
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 
 const Index = () => {
@@ -25,16 +26,17 @@ const Index = () => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
-
+  
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex]); // Include currentIndex in the dependency array
+  
  
 
   return (
     <div className='min-h-screen bg-white'>
     <div className="relative  w-full h-full flex justify-end bg-gradient-to-t from-black via-transparent to-black overflow-hidden">
     {/* :HERO IMAGE */}
-    <img
+    <Image
       src={images[currentIndex]}
       alt=""
       className="absolute w-full h-216 object-cover object-left sm:object-center opacity-70" />
@@ -42,7 +44,8 @@ const Index = () => {
     <div className="relative py-2 xl:py-40 w-full md:w-2/3 lg:w-1/2 h-full flex flex-col justify-center">
       {/* ::Hero title & text */}
       <div className="mx-5 md:mx-0  p-8 rounded-xl md:rounded-r-none bg-gray-800 bg-opacity-50 text-white shadow-2xl">
-          <h1 className="text-3xl sm:text-5xl text-yellow-500 font-josefin font-extrabold">{titles[currentIndex]} <br/></h1>
+<h1 className="text-3xl sm:text-5xl text-yellow-500 font-josefin font-extrabold">{titles[currentIndex]} <br/></h1>
+
           <h1 className="text-2xl sm:text-3xl font-josefin font-bold"> {subtitles[currentIndex]}<br/></h1>
         </div>
       {/* ::Hero button */}
