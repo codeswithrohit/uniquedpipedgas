@@ -1,205 +1,149 @@
-import React,{useState} from 'react'
 
-const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+import React, { useState } from 'react'
+import { Popover } from "@headlessui/react"
+import { HomeIcon, CogIcon, CreditCardIcon, InformationCircleIcon, MailIcon, ShoppingCartIcon,XIcon,MenuIcon } from "@heroicons/react/outline";
+import { LoginIcon, PencilAltIcon } from "@heroicons/react/solid"
+
+
+const StoreNavigation8 = () => {
+
+ 
+
+  // Small device state
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  // const [activeTab, setActiveTab] = useState("tab1")
+
   return (
-    <div className="bg-white">
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-      <div className="relative flex items-center justify-between">
-        <div className="flex items-center">
-       
-  <a
-    href="/"
-    aria-label="Company"
-    title="Company"
-    className="inline-flex items-center"
-  >
-    <img
-      src="http://uniquepipedgas.com/img/name1.jpg"
-      alt="Logo"
-      className="w-48 h-16 rounded-full"
-    />
-   
-  </a>
+    <div className="relative w-full bg-white">
 
+      {/* :STORE NAVIGATION (SMALL DEVICE) */}
+      <div className="md:hidden">
 
-          <ul className="flex items-center hidden space-x-8 lg:flex">
-            <li>
-              <a
-                href="/"
-                aria-label="Our Home"
-                title="Our Home"
-                className="font-medium ml-8 tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="/services"
-                aria-label="Our Services"
-                title="Our Services"
-                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
-                aria-label="Our Payment"
-                title="Our Payment"
-                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Payment
-              </a>
-            </li>
-            <li>
-              <a
-                href="/contactus"
-                aria-label="Our Contact"
-                title="Our Contact"
-                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Contact Us
-              </a>
-            </li>
-            <li>
-              <a
-                href="/aboutus"
-                aria-label="About Us"
-                title="About Us"
-                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                About Us
-              </a>
-            </li>
-          
-          </ul>
-        </div>
-        
-        <div className="lg:hidden">
-          <button
-            aria-label="Open Menu"
-            title="Open Menu"
-            className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
-            onClick={() => setIsMenuOpen(true)}
-          >
-            <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
-              />
-              <path
-                fill="currentColor"
-                d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
-              />
-              <path
-                fill="currentColor"
-                d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
-              />
-            </svg>
-          </button>
-          {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
-              <div className="p-5 bg-white border rounded shadow-sm">
-                <div className="flex items-center justify-between mb-4">
-                <div>
-  <a
-    href="/"
-    aria-label="Company"
-    title="Company"
-    className="inline-flex items-center"
-  >
-    <img
-      src="http://uniquepipedgas.com/img/name1.jpg"
-      alt="Company Logo"
-      className="w-48 h-16 rounded-full"
-    />
-  
-  </a>
-</div>
+        {/* ::Overlay Background */}
+        <div className={`z-30 fixed inset-0 w-full h-screen bg-gray-800 bg-opacity-75 ${isMenuOpen ? "visible" : "invisible"}`} />
 
-                  <div>
-                    <button
-                      aria-label="Close Menu"
-                      title="Close Menu"
-                      className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
-                        <path
-                          fill="currentColor"
-                          d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <nav>
-                  <ul className="space-y-4">
-                    <li>
-                      <a
-                        href="/"
-                        aria-label="Our Home"
-                        title="Our Home"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Home
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/services"
-                        aria-label="Our Services"
-                        title="Our Services"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Services
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/payment"
-                        aria-label="Our Payment"
-                        title="Our Payment"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                       Payment
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/contactus"
-                        aria-label="Our Contact"
-                        title="Our Contact"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Contact Us
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/aboutus"
-                        aria-label="About Us"
-                        title="About Us"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        About Us
-                      </a>
-                    </li>
-                    
-                  
-                  </ul>
-                </nav>
+        {/* ::Mobile Menu */}
+        <div className={`z-50 fixed top-0 left-0 md:inset-0 md:relative w-full h-full max-h-screen max-w-xs overflow-y-scroll md:overflow-auto bg-gray-50 transition-all duration-300 ease-in-out transform ${isMenuOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"}`}>
+          <div className="flex flex-col">
+            {/* :::Close menu button */}
+            <span className="pt-3 pb-5 pr-3 flex justify-end">
+              <button className="text-gray-500 hover:text-gray-800" onClick={() => setIsMenuOpen(false)}>
+                <XIcon className="w-7 h-7" />
+              </button>
+            </span>
+            {/* :::Your content here! */}
+            <div className="py-5 px-4 w-full h-80"> {/* delete class "h-80" */}
+              {/* Replace with your content */}
+              <div className="border-4 border-dashed border-gray-200 rounded-lg inline-flex justify-center items-center w-full h-full text-lg text-gray-200 font-extrabold">Your Mega Menu comes here</div>
+              {/* /End replace */}
+            </div>
+            {/* :::Sign In / Sign Up / Cart */}
+            <div className="py-5 px-4 flex flex-col space-y-2 border-t-2">
+              <a href="#link" className="py-1 px-4 rounded-md text-sm text-gray-700 font-semibold tracking-wide hover:bg-yellow-600 hover:text-white">
+                Sign In
+              </a>
+              <a href="#link" className="py-1 px-4 rounded-md text-sm text-gray-700 font-semibold tracking-wide hover:bg-yellow-600 hover:text-white">
+                Create a account
+              </a>
+              <a href="#link" className="py-1 px-4 rounded-md text-sm text-gray-700 font-semibold tracking-wide hover:bg-yellow-600 hover:text-white">
+                My Cart
+              </a>
+            </div>
+            {/* :::Language & Currency */}
+            <div className="py-5 px-4 flex flex-col space-y-4 border-t-2">
+              {/* ::::currency */}
+              <div className="flex flex-col">
+                <label htmlFor="currency" className="mb-2 text-sm text-gray-700 font-semibold">Select your currency</label>
+                <select name="currency" id="currency" className="form-select bg-gray-100 rounded-md border-transparent text-sm font-medium text-gray-800 outline-none cursor-pointer focus:ring-1 focus:ring-yellow-600 focus:border-yellow-600">
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="CAD">CAD</option>
+                </select>
+              </div>
+              {/* ::::language */}
+              <div className="flex flex-col">
+                <label htmlFor="language" className="mb-2 text-sm text-gray-700 font-semibold">Select your language</label>
+                <select name="language" id="language" className="form-select bg-gray-100 rounded-md border-transparent text-sm font-medium text-gray-800 outline-none cursor-pointer focus:ring-1 focus:ring-yellow-600 focus:border-yellow-600">
+                  <option value="English">English</option>
+                  <option value="Français">Français</option>
+                  <option value="Español">Español</option>
+                </select>
               </div>
             </div>
-          )}
+          </div>
         </div>
+
       </div>
+
+
+
+      {/* :STORE NAVIGATION */}
+      <header className="relative">
+
+        {/* ::Top Header */}
+        <div className="relative py-3 px-4">
+          <div className="flex justify-between items-center">
+            
+            {/* :::Site logo & Burger icon & Search */}
+            <div className="mr-10 flex items-center space-x-5">
+              {/* ::::burger button (small device) */}
+              <button className="flex-shrink-0 md:hidden text-gray-500 hover:text-yellow-600" aria-label="open navigation menu" onClick={() => setIsMenuOpen(true)}>
+                <MenuIcon className="w-8 h-8" />
+              </button>
+              {/* ::::logo  */}
+              <a href="#link" className="flex-shrink-0 w-48 h-20   text-yellow-600">
+              <img
+      src='unique.png'
+      alt="logo"
+      className=" w-48 h-20  " />
+              </a>
+             
+            </div>
+
+
+            <div className="flex items-center md:space-x-4">
+  {/* Home */}
+  <a href="/" className="border-5-2 border-gray-200 py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
+    <HomeIcon className="mr-2 w-4 h-4" />
+    Home
+  </a>
+  
+  {/* Services */}
+  <a href="/services" className="py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
+    <CogIcon className="mr-2 w-4 h-4" />
+    Services
+  </a>
+  
+  {/* Payment */}
+  <a href="payment" className="py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
+    <CreditCardIcon className="mr-2 w-4 h-4" />
+    Payment
+  </a>
+  
+  {/* About Us */}
+  <a href="/aboutus" className="py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
+    <InformationCircleIcon className="mr-2 w-4 h-4" />
+    About Us
+  </a>
+  
+  {/* Contact Us */}
+  <a href="/contactus" className="py-1.5 px-3 lg:px-6 hidden md:inline-flex items-center rounded-md bg-yellow-600 text-sm text-white font-bold whitespace-nowrap hover:bg-yellow-500">
+    <MailIcon className="mr-2 w-4 h-4" />
+    Contact Us
+  </a>
+  
+
+</div>
+
+          </div>
+        </div>
+
+      
+
+      </header>
+
     </div>
-  </div>
   )
 }
 
-export default Navbar
+export default StoreNavigation8

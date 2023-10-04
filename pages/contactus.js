@@ -56,10 +56,20 @@ India</p>
                     <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">	020-41473018 / 41473003</p>
                 </div>
             </div>
-
             <div className="overflow-hidden rounded-lg lg:col-span-2 h-96 lg:h-auto">
-                <iframe width="100%" height="100%" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%C4%B0zmir+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"></iframe>
-            </div>
+    <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        title="map"
+        marginheight="0"
+        marginwidth="0"
+        scrolling="no"
+        src="https://maps.google.com/maps?q=4,Vaishali%20Apartments,%20Behind%20Kothrud%20Bus%20Stand,%203,Dahanukar%20Colony,%20Kothrud,%20Pune%20411038,%20India&amp;output=embed"
+    ></iframe>
+</div>
+
+
         </div>
     </div>
 </section>
